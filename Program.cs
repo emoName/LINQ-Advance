@@ -17,9 +17,9 @@ namespace LINQ_Advance
             queryOperators.ProjectionMethod();
 
 
+            Clousure clousure = new Clousure();
 
-
-
+            clousure.RunClosures();
 
 
 
