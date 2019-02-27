@@ -25,7 +25,6 @@ namespace LINQ_Advance
             {
                 int inside = 0;
 
-
                 _myDelegate[i] = (int b) =>
                                             {
                                                 outside++;
@@ -41,7 +40,12 @@ namespace LINQ_Advance
 
         public void RunClosures()
         {
-            this.ClosureMethod();
+            //this.ClosureMethod();
+            MyClass1 m = new MyClass1();
+            MyClass2 n = new MyClass2();
+            m.Mrthod1(_myDelegate);
+            n.Mrthod1(_myDelegate);
+
             _myDelegate[0](3);
             _myDelegate[0](7);
             _myDelegate[0](3);
@@ -51,10 +55,40 @@ namespace LINQ_Advance
             _myDelegate[1](4);
         }
 
-
-
-
-
-
     }
+
+    class MyClass1
+    {
+        public void Mrthod1(MyDelegate[] m)
+        {
+            int outside = 0;
+
+            m[0] = (int b) =>
+            {
+              int inside =1;
+                outside++;
+                inside++;
+                Console.WriteLine("Call from Class 1 var -> " + b + " Outside : " + outside + " -> Inside : " + inside);
+            };
+
+        }
+    }
+
+    class MyClass2
+    {
+        public void Mrthod1(MyDelegate[] m)
+        {
+            int outside = 0;
+
+            m[1] = (int b) =>
+            {
+                int inside = 1;
+                outside++;
+                inside++;
+                Console.WriteLine("Call from Class 2 var -> " + b + " Outside : " + outside + " -> Inside : " + inside);
+            };
+
+        }
+    }
+
 }
