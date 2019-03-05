@@ -65,7 +65,7 @@ namespace LINQ_Advance
 
             m[0] = (int b) =>
             {
-              int inside =1;
+                int inside = 1;
                 outside++;
                 inside++;
                 Console.WriteLine("Call from Class 1 var -> " + b + " Outside : " + outside + " -> Inside : " + inside);
