@@ -40,11 +40,11 @@ namespace LINQ_Advance
 
         public void RunClosures()
         {
-            //this.ClosureMethod();
-            MyClass1 m = new MyClass1();
-            MyClass2 n = new MyClass2();
-            m.Mrthod1(_myDelegate);
-            n.Mrthod1(_myDelegate);
+            this.ClosureMethod();
+            //MyClass1 m = new MyClass1();
+            //MyClass2 n = new MyClass2();
+            //m.Mrthod1(_myDelegate);
+            //n.Mrthod1(_myDelegate);
 
             _myDelegate[0](3);
             _myDelegate[0](7);
